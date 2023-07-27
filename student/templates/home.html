@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock title %}
+
+{% block body %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Information</title>
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+           
+          }
+    </style>
+</head>
+
+<body >
+    <table class="m-4 text-white font-blod">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>Marks</th>
+        <th>City</th>
+        <th>Tour_place</th>
+        <th>Dream</th>
+        <th>College</th>
+        <th>Ideology</th>
+        <th>Occupation</th>
+        
+        {% for student in students %}
+        <tr class="text-white font-bold">
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.roll}}</td>
+        <td>{{student.marks}}</td>
+        <td>{{student.city}}</td>
+        <td>{{student.tour_place}}</td>
+        <td>{{student.dream}}</td>
+        <td>{{student.college}}</td>
+        <td>{{student.ideology}}</td>
+        <td>{{student.occupation}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endblock body %}
